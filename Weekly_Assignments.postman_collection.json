@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "049f7a54-99c0-4c22-96d0-2beb0604bf29",
+		"name": "Weekly_Assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Week1",
+			"item": [
+				{
+					"name": "Create new change without body",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "India@123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://dev68594.service-now.com/api/now/table/change_request",
+							"protocol": "https",
+							"host": [
+								"dev68594",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new change with body",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "India@123",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"short_description\" : \"created emergency ticket\",\r\n      \"type\" : \"emergency\"\r\n\r\n}"
+						},
+						"url": {
+							"raw": "https://dev68594.service-now.com/api/now/table/change_request",
+							"protocol": "https",
+							"host": [
+								"dev68594",
+								"service-now",
+								"com"
+							],
+							"path": [
+								"api",
+								"now",
+								"table",
+								"change_request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Jira issues",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "hari.radhakrishnan@testleaf.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "enRsqhIt1JdnwwFwrnq6F9DC",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-may2020.atlassian.net/rest/api/2/search?jql-project=\"RA\"",
+							"protocol": "https",
+							"host": [
+								"api-may2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"search"
+							],
+							"query": [
+								{
+									"key": "jql-project",
+									"value": "\"RA\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new jira issue",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "hari.radhakrishnan@testleaf.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "enRsqhIt1JdnwwFwrnq6F9DC",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"fields\": {\r\n    \"project\":\r\n                {\r\n                    \"key\": \"RA\"\r\n                },\r\n    \"summary\": \"create issue in RA project\",\r\n    \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n    \"issuetype\": {\r\n                    \"name\": \"Story\"\r\n                }\r\n    }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://api-may2020.atlassian.net/rest/api/2/issue/",
+							"protocol": "https",
+							"host": [
+								"api-may2020",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"2",
+								"issue",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
